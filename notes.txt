@@ -1,0 +1,91 @@
+key generation algorithm
+1) permutate1// 64 bits return 56 
+2) divide key into 2 subkeys 
+3) apply rounds  
+4) concatenate 
+5) permutate2  and return list of 16 keys 
+
+
+0110000101100001011100110110010001100110001100000011000000110000
+01100001011000010111001101100100
+mangular func.:    // take Ri  and kj 
+1. expand   // take Ri(32 bits) return 48 bits 
+2. xoring(expandRes,ki)return 48 bits 
+3. apply s-boxes take xoringRes(48 bits) return 32 bits
+4. permutatetion
+
+
+enc64Block func.:    // func. take {(one block)64 bits and list of 16 keys, initPerm,finalPerm} return 64 bits 
+1. init. perm.  
+2. divide initPermRes into 2 subkeys(L0,R0) * each 32 bits 
+3. loop from (L0,R0) to (L16,R16) and apply the following: // output L16, R16
+    - Li = Ri-1
+    - Ri = Li-1 xor mangFunc(Ri-1,ki)
+4. swap(L16,R16)    
+5. inverse perm.   // return output here 
+
+
+
+
+test cases:
+
+test1  ==> ok
+enc:-
+key: zxcvbnmq
+plain: test1234
+res: EgÊ.°i2
+dec:- 
+key: zxcvbnmq
+cipher: EgÊ.°i2
+res: test1234
+
+test2:  ==> ok
+key: mouradaa
+encryption
+  - data: test1234
+  - result: {²c£;.Ç
+decryption
+  - input: {²c£;.Ç
+  - result: test1234
+
+
+test3 ==> ok
+enc:-
+key: keycreat
+plain: testanyd  
+res: ô:4ça
+
+dec:- 
+key: keycreat
+cipher: ô:4ça
+res: testanyd
+
+test4 ==> ok 
+enc:-
+key: keycreat
+plain: oneDayEveryTingWillBe0k
+res: ~WÃAý ®Gý_nrE
+dec:-
+key: keycreat
+cipher: ~WÃAý ®Gý_nrE
+res: oneDayEveryTingWillBe0k
+
+test5 ==> ok 
+key: testuser
+plain: helloWorld
+res: =±E/ë­ø÷­¿hµg
+dec:-
+key: keycreat
+cipher: =±E/ë­ø÷­¿hµg
+res: helloWorld
+
+
+modification for github: => all done
+1. remove extra comments 
+2. seperate enc/dec files 
+3. put functions in helpers file 
+4. create main file 
+5. remove 0/1 params in keygenerate and some functions 
+
+for github readme: 
+- overview 
