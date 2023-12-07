@@ -1,7 +1,6 @@
 from helpers import *
 from keyGen import *
 
-####   decryption part 
 def dec64Block(data_64bits, keys, initPerm,finalPerm): 
     initPermRes = permutateAny(data_64bits,initPerm)  # 64 bits
     lPrev = initPermRes[:32]  # divide
