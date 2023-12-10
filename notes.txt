@@ -80,12 +80,4 @@ cipher: =±E/ë­ø÷­¿hµg
 res: helloWorld
 
 
-modification for github: => all done
-1. remove extra comments 
-2. seperate enc/dec files 
-3. put functions in helpers file 
-4. create main file 
-5. remove 0/1 params in keygenerate and some functions 
 
-for github readme: 
-- overview 
