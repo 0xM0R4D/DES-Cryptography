@@ -79,5 +79,15 @@ key: keycreat
 cipher: =±E/ë­ø÷­¿hµg
 res: helloWorld
 
+test6 ==> ok 
+key: keyisabc
+enc:-
+plain: am mourad, web/nw pentester
+res: y¾¼çÈ&ácB`HëöÇ(Uxÿ¶°ÀÉÀÇ
+
+dec:-
+key: keyisabc
+cipher: y¾¼çÈ&ácB`HëöÇ(Uxÿ¶°ÀÉÀÇ
+res: am mourad, web/nw pentester
 
 
